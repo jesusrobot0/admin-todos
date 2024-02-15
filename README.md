@@ -34,7 +34,9 @@ docker compose up -d
 5. Configure the .env.template file
    First, change the name to `.env` and then update the database connection string with the valid credentials.
 
-6. **Access the Application:**
+6. Run the [/api/seed](http://localhost:3000/api/seed) endpoint to populate the local database.
+
+7. **Access the Application:**
    Open your browser and visit [http://localhost:3000](http://localhost:3000).
 
 Done! You should now see the application running in your local environment.
