@@ -4,7 +4,7 @@ import { UserActions, UserLinks } from "..";
 
 export function Navbar() {
   return (
-    <div className="py-8 flex justify-between items-center ">
+    <div className="py-6 flex justify-between items-center ">
       <Link href="/dashboard" className="">
         <Image
           src="https://tailus.io/sources/blocks/stats-cards/preview/images/logo.svg"

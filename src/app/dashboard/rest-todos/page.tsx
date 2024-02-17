@@ -1,3 +1,12 @@
+import { TitlePage } from "@/components";
+
 export default function RestTodosPage() {
-  return <h1 className="text-5xl">Rest Todos Page</h1>;
+  return (
+    <>
+      <TitlePage
+        title="Todos"
+        description="Todos page taking Todos data from an API Rest created in Next"
+      />
+    </>
+  );
 }
