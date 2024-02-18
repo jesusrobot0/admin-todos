@@ -3,11 +3,15 @@ import { LinkItem } from "..";
 const menuLinks = [
   {
     path: "/dashboard",
-    title: "Home",
+    title: "Dashboard",
   },
   {
     path: "/dashboard/rest-todos",
-    title: "Todos",
+    title: "Rest",
+  },
+  {
+    path: "/dashboard/server-todos",
+    title: "ServerActions",
   },
 ];
 
