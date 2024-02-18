@@ -8,8 +8,7 @@ export default function DashboardLayout({
   return (
     <div className="max-w-[1200px] w-[92%] mx-auto">
       <Navbar />
-
-      {children}
+      <div>{children}</div>
     </div>
   );
 }
