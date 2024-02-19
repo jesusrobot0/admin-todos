@@ -27,3 +27,13 @@ export async function createTodo(description: string): Promise<Todo> {
 
   return todo;
 }
+
+export async function deleteAllCompleted() {
+  const todos = await fetch("/api/todos", {
+    method: "DELETE",
+  });
+
+  console.log(todos);
+
+  return todos;
+}

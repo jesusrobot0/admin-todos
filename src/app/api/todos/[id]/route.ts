@@ -61,3 +61,12 @@ export async function PUT(request: Request, { params: { id } }: Segments) {
     return NextResponse.json(error, { status: 400 });
   }
 }
+
+export async function DELETE(request: Request, { params: { id } }: Segments) {
+  try {
+    const todo = await prisma.todo.delete({ where: { id } });
+    return NextResponse.json(todo);
+  } catch (error) {
+    return NextResponse.json(error, { status: 400 });
+  }
+}

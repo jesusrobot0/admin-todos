@@ -17,6 +17,11 @@ export function NewTodo() {
     router.refresh();
   };
 
+  const onDelete = async () => {
+    await todosApi.deleteAllCompleted();
+    router.refresh();
+  };
+
   return (
     <div className="mb-8 flex justify-between items-center">
       <form className="flex items-center gap-2" onSubmit={onSubmit}>
@@ -35,9 +40,12 @@ export function NewTodo() {
         </button>
       </form>
 
-      <button className="flex items-center justify-center gap-2 w-[100px] h-[45px] text-white rounded bg-red-400">
+      <button
+        className="flex items-center justify-center gap-2 h-[45px] px-4 text-white rounded bg-red-400"
+        onClick={onDelete}
+      >
         <Trash size={18} />
-        Delete
+        Delete all completed
       </button>
     </div>
   );
