@@ -2,8 +2,9 @@
 
 import { Todo } from "@prisma/client";
 import { TodoItem } from "..";
-import * as todosApi from "@/todos/helpers/todos"; // Podemos importar asi o con un archivo de barril
+// import * as todosApi from "@/todos/helpers/todos"; // Podemos importar asi o con un archivo de barril
 import { useRouter } from "next/navigation";
+import { toggleTodo } from "@/todos/actions/todo-actions";
 
 interface Props {
   todos?: Todo[];
@@ -11,10 +12,10 @@ interface Props {
 export function TodosGrid({ todos = [] }: Props) {
   const router = useRouter();
 
-  const toggleTodo = async (id: string, complete: boolean) => {
-    const updatedTodo = await todosApi.updateTodo(id, complete);
-    router.refresh();
-  };
+  // const toggleTodo = async (id: string, complete: boolean) => {
+  //   const updatedTodo = await todosApi.updateTodo(id, complete);
+  //   router.refresh();
+  // };
 
   return (
     <section className="flex flex-col gap-4">

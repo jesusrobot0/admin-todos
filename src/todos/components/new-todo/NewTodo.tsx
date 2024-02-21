@@ -3,7 +3,8 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Trash } from "lucide-react";
-import * as todosApi from "@/todos/helpers/todos";
+import { addTodo, deleteCompleted } from "@/todos/actions/todo-actions";
+// import * as todosApi from "@/todos/helpers/todos";
 
 export function NewTodo() {
   const [description, setDescription] = useState("");
@@ -12,14 +13,15 @@ export function NewTodo() {
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (description.trim().length === 0) return;
-    const newTodo = await todosApi.createTodo(description);
+    const newTodo = await addTodo(description);
     setDescription("");
-    router.refresh();
+    console.log(newTodo);
+    // router.refresh();
   };
 
   const onDelete = async () => {
-    await todosApi.deleteAllCompleted();
-    router.refresh();
+    await deleteCompleted();
+    // router.refresh();
   };
 
   return (
