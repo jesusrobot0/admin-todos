@@ -13,6 +13,10 @@ const menuLinks = [
     path: "/dashboard/server-todos",
     title: "ServerActions",
   },
+  {
+    path: "/dashboard/cookies",
+    title: "Cookies",
+  },
 ];
 
 export function UserLinks() {
