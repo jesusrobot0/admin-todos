@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import { TabBar, TitlePage } from "@/components";
 
 export const metadata = {
@@ -6,10 +7,14 @@ export const metadata = {
 };
 
 export default function CookiesPage() {
+  const cookieStore = cookies();
+  const selectedTab = Number(cookieStore.get("selectedTab")?.value ?? 1);
+  console.log(selectedTab);
+
   return (
     <>
       <TitlePage title="Cookies" description="" />
-      <TabBar />
+      <TabBar currentTab={selectedTab} />
     </>
   );
 }
